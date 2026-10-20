@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1488.press — Instant Twitter / X Link Fixer</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="1488.press — Instant Twitter / X Link Fixer">
+    <meta name="description" content="Instant video playback and rich media embeds for Telegram and Discord. Fast and easy — just replace x.com with 1488.press!">
+    <meta name="theme-color" content="#880b24">
+
+    <!-- Open Graph / Telegram / WhatsApp / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://1488.press/">
+    <meta property="og:site_name" content="1488.press">
+    <meta property="og:title" content="1488.press — Instant Twitter / X Link Fixer">
+    <meta property="og:description" content="Instant video playback & rich media embeds for Telegram and Discord. Fast and easy — just replace x.com with 1488.press!">
+    <meta property="og:image" content="https://1488.press/og-image.png">
+    <meta property="og:image:url" content="https://1488.press/og-image.png">
+    <meta property="og:image:secure_url" content="https://1488.press/og-image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="1488.press — Twitter / X Link Fixer">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://1488.press/">
+    <meta name="twitter:title" content="1488.press — Instant Twitter / X Link Fixer">
+    <meta name="twitter:description" content="Instant video playback & rich media embeds for Telegram and Discord. Fast and easy — just replace x.com with 1488.press!">
+    <meta name="twitter:image" content="https://1488.press/og-image.png">
+
+    <link rel="stylesheet" href="style.css?v=2">
+    <script src="main.js?v=2" defer></script>
+</head>
+<body>
+    <header class="header">
+        <span class="logo">1488.press</span>
+        <div class="header-controls">
+            <div class="lang-dropdown" id="lang-dropdown">
+                <button id="lang-dropdown-btn" class="header-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+                    <span id="current-lang-text">EN</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <ul class="lang-dropdown-menu" id="lang-dropdown-menu" role="listbox">
+                    <li class="lang-dropdown-item active" role="option" data-lang="en">EN (English)</li>
+                    <li class="lang-dropdown-item" role="option" data-lang="ru">RU (Русский)</li>
+                </ul>
+            </div>
+            <button id="theme-toggle" class="header-btn" aria-label="Toggle theme">
+                <span id="theme-text">Dark Mode</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="content">
+        <!-- Twitter / X Embed Fixer -->
+        <section class="converter-card" id="converter-section">
+            <h2 id="converter-title" class="converter-title">Twitter / X Embed Fixer</h2>
+            <p id="converter-desc" class="converter-desc">Fix broken video & image embeds in Telegram, Discord, and chat apps.</p>
+            
+            <div class="converter-input-row">
+                <input type="text" id="converter-input" class="converter-input" placeholder="Paste X / Twitter URL here..." autocomplete="off" spellcheck="false">
+                <button type="button" id="paste-btn" class="converter-action-btn paste-btn">Paste</button>
+                <button type="button" id="converter-btn" class="converter-action-btn">Fix Link</button>
+            </div>
+
+            <div id="converter-result" class="converter-result" style="display: none;">
+                <span id="converter-result-url" class="converter-result-url"></span>
+                <button type="button" id="converter-copy-btn" class="converter-action-btn copy-btn-small">Copy</button>
+            </div>
+
+            <div class="converter-hint" id="converter-hint">
+                Tip: Just replace <code>x.com</code> with <code>1488.press</code> in any tweet URL.
+            </div>
+        </section>
+
+        <!-- Less prominent helper section at bottom -->
+        <div class="helper-notice" id="helper-notice">
+            <p id="greeting">Hi there! Im searching for people who can help me with creating this website.</p>
+            <p id="contact-lead">
+                <span id="contact-lead-text">Contact me:</span> <span class="copyable" id="email-btn" title="Click to copy">1488.press@proton.me</span>
+            </p> 
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span id="footer-info">Info: This site does not collect any information about you.</span> 
+        <span id="contact"><span id="footer-contact-text">Contact:</span> <span class="copyable" id="footer-email-btn" title="Click to copy">1488.press@proton.me</span></span>
+    </footer>
+<div id="toast" class="toast">Mail Copied!</div>
+</body>
+</html>
