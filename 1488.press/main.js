@@ -37,13 +37,13 @@ const translations = {
     langDisplay: "EN",
     langAria: "Current language: English. Click to choose language",
     converterTitle: "Twitter / X Embed Fixer",
-    converterDesc: "Fix broken video & image embeds in Telegram, Discord, and chat apps.",
+    converterDesc: "Native inline video, GIF & image previews in Telegram, Discord, and chat apps without opening x.com.",
     converterPlaceholder: "Paste X / Twitter URL here...",
     converterBtn: "Fix Link",
     pasteBtn: "Paste",
     converterCopy: "Copy",
     converterCopied: "Link Copied!",
-    converterHint: "Tip: Just replace <code>x.com</code> with <code>1488.press</code> in any tweet URL.",
+    converterHint: "Tip: Just replace <code>x.com</code> with <code>1488.press</code> in any tweet URL. Videos and GIFs play directly inside Telegram & Discord!",
     converterInvalid: "Please enter a valid Twitter / X URL or post ID"
   },
   ru: {
@@ -58,13 +58,13 @@ const translations = {
     langDisplay: "RU",
     langAria: "Текущий язык: Русский. Нажмите для выбора языка",
     converterTitle: "Twitter / X Фиксер ссылок",
-    converterDesc: "Воспроизведение видео и картинок прямо в Telegram, Discord и мессенджерах.",
+    converterDesc: "Воспроизведение видео и картинок прямо внутри Telegram и Discord без перехода на x.com.",
     converterPlaceholder: "Вставьте ссылку на твит из X / Twitter...",
     converterBtn: "Исправить",
     pasteBtn: "Вставить",
     converterCopy: "Копировать",
     converterCopied: "Ссылка скопирована!",
-    converterHint: "Подсказка: просто замените <code>x.com</code> на <code>1488.press</code> в ссылке на любой твит.",
+    converterHint: "Подсказка: замените <code>x.com</code> на <code>1488.press</code>. Видео и гифки воспроизводятся прямо внутри приложений!",
     converterInvalid: "Пожалуйста, введите ссылку на твит или ID"
   }
 };
@@ -243,7 +243,7 @@ function convertTwitterUrl(rawInput) {
   if (!input) return null;
 
   let path = '';
-  if (/^\d+$/.test(input)) {
+  if (/^\d+(\.(?:mp4|gif|mov))?$/i.test(input)) {
     path = 'i/status/' + input;
   } else {
     let clean = input.replace(/^https?:\/\//i, '').replace(/^www\./i, '');
@@ -251,7 +251,7 @@ function convertTwitterUrl(rawInput) {
     path = clean.replace(/^\/+/, '');
   }
 
-  if (/^\d+$/.test(path)) {
+  if (/^\d+(\.(?:mp4|gif|mov))?$/i.test(path)) {
     path = 'i/status/' + path;
   }
 
